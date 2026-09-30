@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Michael Velasquez is a sim racing driver from the Philippines. In 2026 he represents the country at the Asia Pacific Motorsport Championship in Pattaya, in both Assetto Corsa and iRacing, and at the TGR Asia Esports GT Championship in Bangkok after finishing second in the Sporting class of the TGR Philippines Esports GT Championship. In 2024 he won three Pro-class championships.">
+<meta name="description" content="Michael Velasquez is a sim racing driver from the Philippines. In 2026 he represents the country at the Asia Pacific Motorsport Championship in Pattaya, in both Assetto Corsa and iRacing, and at the TGR Asia eSports GT Championship in Bangkok after finishing second in the Sporting Class of the TGR Philippines eSports GT Championship. In 2024 he won three Pro-class championships.">
 <link rel="icon" href="assets/favicon.png">
 <link rel="canonical" href="https://michaelvincent34.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Michael Velasquez, sim racing driver">
-<meta property="og:description" content="Sim racing driver from the Philippines, representing the country at the 2026 Asia Pacific Motorsport Championship in Pattaya and the TGR Asia Esports GT Championship in Bangkok.">
+<meta property="og:description" content="Sim racing driver from the Philippines, representing the country at the 2026 Asia Pacific Motorsport Championship in Pattaya and the TGR Asia eSports GT Championship in Bangkok.">
 <meta property="og:url" content="https://michaelvincent34.github.io/">
 <meta property="og:image" content="https://michaelvincent34.github.io/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -161,30 +161,27 @@
 
   /* ---------- hero ---------- */
   .hero {
-    --copyw: clamp(400px, 44cqw, 640px);
+    --copyw: clamp(420px, 46cqw, 660px);
     display: grid;
     grid-template-columns: calc(var(--inset) + var(--copyw)) minmax(0, 1fr);
-    height: clamp(560px, calc(100svh - 150px), 840px);
+    min-height: clamp(600px, calc(100svh - 150px), 860px);
   }
   .hero-copy {
     container-type: inline-size;
-    display: flex; flex-direction: column; justify-content: flex-end; gap: 28px;
+    display: flex; flex-direction: column; justify-content: flex-end; gap: 26px;
     padding: 40px 44px 44px var(--inset);
   }
   .display .line { display: block; overflow: hidden; padding: 0 0.1em 0.14em 0; margin-bottom: -0.14em; }
   .display .line > span { display: inline-block; }
   .hero-sub { margin: 0; max-width: 37ch; font-size: 1.1875rem; line-height: 1.5; }
-  .hero-media { margin: 0; display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
-  .hero-media .frame { flex: 1; min-height: 0; overflow: hidden; }
+  .hero-media { margin: 0; position: relative; min-height: 0; }
+  .hero-media .frame { position: absolute; inset: 0 0 30px 0; overflow: hidden; }
   .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%; }
-  .hero-media figcaption { padding: 10px var(--inset) 0 0; }
+  .hero-media figcaption { position: absolute; left: 0; right: var(--inset); bottom: 0; }
   @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; height: auto; }
-    .hero-media { order: -1; }
-    .hero-media .frame { height: clamp(220px, calc(100svh - 470px), 470px); flex: none; }
-    .hero-media figcaption { padding: 8px var(--inset) 0; }
-    .hero-copy { padding: 22px var(--inset) 40px; gap: 20px; }
-    .hero-sub { font-size: 1.0625rem; }
+    .hero { grid-template-columns: 1fr; min-height: 0; }
+    .hero-media { display: none; }
+    .hero-copy { padding: 22px var(--inset) 40px; gap: 18px; justify-content: flex-start; }
   }
 
   /* ---------- facts ---------- */
@@ -373,10 +370,48 @@
   @keyframes settle { from { transform: scale(1.06); } to { transform: none; } }
   @keyframes rise { from { transform: translateY(104%); } to { transform: none; } }
   @keyframes lift { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+  /* ---------- Rev F: calendar first on desktop, driver card on phones ---------- */
+  .hero-portrait, .hero-next, .links { display: none; }
+  .cal { display: grid; gap: 20px; max-width: 34rem; }
+  .cal h2 { font: inherit; font-size: 0.875rem; font-weight: 600; font-style: normal; text-transform: none; letter-spacing: 0; color: var(--muted); margin: 0 0 6px; }
+  .cal ol { list-style: none; margin: 0; padding: 0; }
+  .cal li { display: grid; grid-template-columns: 9.25rem minmax(0, 1fr); gap: 2px 18px; padding: 11px 0; border-top: 1px solid var(--line); }
+  .cal .when { grid-row: span 2; font-style: italic; font-stretch: 112%; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.3; }
+  .cal .next .when { color: var(--red-ink); }
+  .cal .what { font-weight: 650; line-height: 1.3; }
+  .cal .where { font-size: 0.9375rem; color: var(--muted); line-height: 1.4; }
+  .hero-next { margin: 0; font-size: 1.0625rem; line-height: 1.45; }
+  .links { list-style: none; margin: 0; padding: 0; gap: 10px; max-width: 520px; }
+  .links .btn { display: flex; width: 100%; }
+  @media (max-width: 860px) {
+    .top .btn { display: none; }
+    .hero-portrait { display: flex; justify-content: center; margin: 0; background: var(--chip); height: clamp(230px, 36svh, 330px); overflow: hidden; }
+    .hero-portrait img { height: 218%; width: auto; max-width: none; }
+    .hero-sub, .hero .actions { display: none; }
+    .hero-next { display: block; }
+    .links { display: grid; }
+    .cal { margin-top: 10px; }
+    .about-portrait { display: none; }
+  }
+  @media (max-width: 480px) { .cal li { grid-template-columns: 6.25rem minmax(0, 1fr); gap: 2px 14px; } }
+  @media (min-width: 861px) and (max-height: 820px) {
+    .hero-copy { gap: 18px; padding-top: 28px; padding-bottom: 32px; }
+    .hero-sub { font-size: 1.0625rem; }
+    .cal { gap: 12px; }
+    .cal li { padding: 7px 0; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .cal { animation: lift 700ms var(--ease-out) 300ms both; }
+    .hero-copy .actions { animation-delay: 380ms; }
+    .hero-next { animation: lift 700ms var(--ease-out) 200ms both; }
+    .links { animation: lift 700ms var(--ease-out) 260ms both; }
+    .hero-portrait img { animation: settle 1400ms var(--ease-out-expo) both; }
+  }
 </style>
 <!-- PREVIEW-KEEP-END -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Michael Velasquez","jobTitle":"Sim racing driver","nationality":"Philippines","email":"mailto:mvesimracing@gmail.com","sameAs":["https://www.facebook.com/MVESimRacing","https://www.youtube.com/@mve_simracing","https://www.tiktok.com/@michaelvelasquez34_","https://www.twitch.tv/michaelvelasquez34"]}
+{"@context":"https://schema.org","@type":"Person","name":"Michael Velasquez","jobTitle":"Sim racing driver","nationality":"Philippines","email":"mailto:mvesimracing@gmail.com","sameAs":["https://www.facebook.com/MVESimRacing","https://www.instagram.com/mve_simracing","https://www.youtube.com/@mve_simracing","https://www.tiktok.com/@michaelvelasquez34_","https://www.twitch.tv/michaelvelasquez34"]}
 </script>
 </head>
 <body>
@@ -398,9 +433,37 @@
 
 <main id="main">
   <section class="hero" aria-labelledby="name">
+    <figure class="hero-portrait">
+      <img src="assets/photos/michael-portrait.webp" width="900" height="1557" decoding="async"
+           alt="Michael Velasquez in his navy Legion of Racers team shirt, arms crossed">
+    </figure>
     <div class="hero-copy">
       <h1 class="display" id="name"><span class="line"><span>Michael</span></span><span class="line"><span>Velasquez</span></span></h1>
-      <p class="hero-sub">Sim racing driver from the Philippines, representing the country at the 2026 Asia Pacific Motorsport Championship in Pattaya and the TGR Asia Esports GT Championship in Bangkok.</p>
+      <p class="hero-sub">Sim racing driver from the Philippines. This October and November he represents the country at two championships in Thailand.</p>
+      <p class="hero-next"><b>Next:</b> the Asia Pacific Motorsport Championship in Pattaya, 23 to 25 October.</p>
+      <ul class="links" aria-label="Message Michael or follow his channels">
+        <li><a class="btn btn-primary" href="https://m.me/MVESimRacing">Message on Facebook</a></li>
+        <li><a class="btn btn-quiet" href="https://www.instagram.com/mve_simracing">Instagram</a></li>
+        <li><a class="btn btn-quiet" href="https://www.tiktok.com/@michaelvelasquez34_">TikTok</a></li>
+        <li><a class="btn btn-quiet" href="https://www.youtube.com/@mve_simracing">YouTube</a></li>
+        <li><a class="btn btn-quiet" href="https://www.twitch.tv/michaelvelasquez34">Twitch</a></li>
+        <li><a class="btn btn-quiet" href="mailto:mvesimracing@gmail.com">Email Michael</a></li>
+      </ul>
+      <div class="cal">
+        <div class="cal-group">
+          <h2>Coming up</h2>
+          <ol>
+            <li class="next"><span class="when">23 to 25 Oct</span><span class="what">Asia Pacific Motorsport Championship</span><span class="where">Pattaya, Thailand. Philippine team, Assetto Corsa and iRacing.</span></li>
+            <li><span class="when">14 and 15 Nov</span><span class="what">TGR Asia eSports GT Championship</span><span class="where">Bangkok, Thailand. Team Philippines, Gran Turismo 7.</span></li>
+          </ol>
+        </div>
+        <div class="cal-group">
+          <h2>Latest result</h2>
+          <ol>
+            <li><span class="when">27 Sep</span><span class="what">TGR Philippines eSports GT Championship</span><span class="where">2nd in the Sporting Class at the national finals in Pasay, the third highest score across both classes.</span></li>
+          </ol>
+        </div>
+      </div>
       <div class="actions">
         <a class="btn btn-primary" href="https://m.me/MVESimRacing">Message on Facebook</a>
         <a class="btn btn-quiet" href="#results">See results</a>
@@ -434,7 +497,7 @@
       <div class="about-copy">
         <h2 id="about-title">About</h2>
         <p>Michael started sim racing in rFactor on a low-end laptop with a gamepad, and in 2015 he won his first championship that way. He later reached a 2.3k iRating on iRacing's old road licence using a Logitech F310, and in 2024 he won two <span class="nw">Pro-class</span> championships on a controller. He has raced on a Moza R9 direct-drive wheel since then.</p>
-        <p>He races for Legion of Racers Ascent and coaches other drivers. His focus is competitive esports. In 2026 he raced the Porsche and Ferrari Esports <span class="nw">Asia-Pacific</span> qualifiers, finished second in the Sporting class of the TGR Philippines Esports GT Championship, and was chosen with two other drivers to represent the Philippines at the TGR Asia Esports GT Championship in Bangkok in November. He also represents the Philippines in both the Assetto Corsa and iRacing categories at the Asia Pacific Motorsport Championship in Pattaya in October.</p>
+        <p>He races for Legion of Racers Ascent and coaches other drivers. His focus is competitive esports. In 2026 he raced the Porsche and Ferrari Esports <span class="nw">Asia-Pacific</span> qualifiers, finished second in the Sporting Class of the TGR Philippines eSports GT Championship, and was chosen with two other drivers to represent the Philippines at the TGR Asia eSports GT Championship in Bangkok in November. He also represents the Philippines in both the Assetto Corsa and iRacing categories at the Asia Pacific Motorsport Championship in Pattaya in October.</p>
         <h3 class="press-title">In the press</h3>
         <ul class="press">
           <li><a href="https://www.zigwheels.ph/car-news/toyota-motor-ph-identifies-2026-tgr-asia-esports-gt-championships-bound-racers">Toyota Motor PH identifies 2026 TGR Asia eSports GT Championships-bound racers</a><span class="meta">Zigwheels PH, 28 September 2026</span></li>
@@ -474,8 +537,8 @@
       <h2 id="season-title">2026 season</h2>
       <ul class="season-list">
         <li>
-          <h3>TGR Philippines Esports GT Championship</h3>
-          <p>He finished second in the Sporting class at the national finals in Pasay on 27 September, racing in Gran Turismo 7, and was the third highest scorer across the Sporting and Junior classes. That made him one of the three drivers chosen to represent the Philippines at the TGR Asia Esports GT Championship in Bangkok on 14 and 15 November.</p>
+          <h3>TGR Philippines eSports GT Championship</h3>
+          <p>He finished second in the Sporting Class at the national finals in Pasay on 27 September, racing in Gran Turismo 7, and was the third highest scorer across the Sporting and Junior classes. That made him one of the three drivers chosen to represent the Philippines at the TGR Asia eSports GT Championship in Bangkok on 14 and 15 November.</p>
         </li>
         <li>
           <h3>Asia Pacific Motorsport Championship</h3>
@@ -510,9 +573,9 @@
       <h3 class="year-label">2026</h3>
       <ul class="entries">
         <li class="entry win"><span class="res">Selected</span><span class="ev">Asia Pacific Motorsport Championship, Pattaya</span><span class="meta">Philippine team, Assetto Corsa and iRacing categories, 23 to 25 October</span></li>
-        <li class="entry win"><span class="res">Selected</span><span class="ev">TGR Asia Esports GT Championship, Bangkok</span><span class="meta">One of three drivers representing the Philippines, 14 and 15 November</span></li>
+        <li class="entry win"><span class="res">Selected</span><span class="ev">TGR Asia eSports GT Championship, Bangkok</span><span class="meta">One of three drivers representing the Philippines, 14 and 15 November</span></li>
         <li class="entry win"><span class="res">P1</span><span class="ev">AAP National Esports Championship, Circuit round 1</span><span class="meta">Pro class, Le Mans Ultimate</span></li>
-        <li class="entry"><span class="res">P2</span><span class="ev">Toyota GAZOO Racing Philippines Esports GT Championship</span><span class="meta">Sporting class, Gran Turismo 7, third highest scorer across both classes</span></li>
+        <li class="entry"><span class="res">P2</span><span class="ev">Toyota GAZOO Racing Philippines eSports GT Championship</span><span class="meta">Sporting Class, Gran Turismo 7, third highest scorer across both classes</span></li>
         <li class="entry"><span class="res">P2</span><span class="ev">eRacingGP Endurance Edition</span><span class="meta">Pro class, Ferrari 296 GT3</span></li>
         <li class="entry"><span class="res">Qualifier</span><span class="ev">Porsche Esports Supercup, <span class="nw">Asia-Pacific</span></span><span class="meta">Live on the iRacing broadcast</span></li>
         <li class="entry"><span class="res">Qualifier</span><span class="ev">Ferrari Esports, <span class="nw">Asia-Pacific</span></span></li>
@@ -523,7 +586,7 @@
       <h3 class="year-label">2025</h3>
       <ul class="entries">
         <li class="entry win"><span class="res">P1</span><span class="ev">ZigWheels Ignition Z, Monza Barcade</span><span class="meta"><a href="https://www.zigwheels.ph/car-news/zigwheels-phs-premiere-ignition-z-sim-racing-event-a-huge-success">Zigwheels PH report</a></span></li>
-        <li class="entry"><span class="res">P4</span><span class="ev">Toyota GAZOO Racing Philippines Esports GT Championship</span><span class="meta">Grand final, half a point off third</span></li>
+        <li class="entry"><span class="res">P4</span><span class="ev">Toyota GAZOO Racing Philippines eSports GT Championship</span><span class="meta">Grand final, half a point off third</span></li>
       </ul>
     </div>
 
@@ -616,9 +679,10 @@
       </figure>
       <div class="channels-copy">
         <h2 id="channels-title"><img src="assets/mve-logo-tight.png" width="437" height="178" alt="MVE SimRacing"></h2>
-        <p>Michael posts his racing as MVE SimRacing on Facebook, YouTube, TikTok and Twitch. His short on <a href="https://www.youtube.com/shorts/WPpENSNpBOo">controller settings for Assetto Corsa</a> has passed 140K views on YouTube and 135K on TikTok.</p>
+        <p>Michael posts his racing as MVE SimRacing on Facebook, Instagram, YouTube, TikTok and Twitch. His short on <a href="https://www.youtube.com/shorts/WPpENSNpBOo">controller settings for Assetto Corsa</a> has passed 140K views on YouTube and 135K on TikTok.</p>
         <ul class="channel-list">
           <li><a href="https://www.facebook.com/MVESimRacing"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span class="net">Facebook</span><span class="handle">MVE SimRacing</span></a></li>
+          <li><a href="https://www.instagram.com/mve_simracing"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="net">Instagram</span><span class="handle">@mve_simracing</span></a></li>
           <li><a href="https://www.youtube.com/@mve_simracing"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span class="net">YouTube</span><span class="handle">@mve_simracing</span></a></li>
           <li><a href="https://www.tiktok.com/@michaelvelasquez34_"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span class="net">TikTok</span><span class="handle">@michaelvelasquez34_</span></a></li>
           <li><a href="https://www.twitch.tv/michaelvelasquez34"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg><span class="net">Twitch</span><span class="handle">michaelvelasquez34</span></a></li>
