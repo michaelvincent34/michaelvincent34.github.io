@@ -408,6 +408,27 @@
     .links { animation: lift 700ms var(--ease-out) 260ms both; }
     .hero-portrait img { animation: settle 1400ms var(--ease-out-expo) both; }
   }
+
+  /* ---------- countdown ---------- */
+  [hidden] { display: none !important; }
+  .cal .count { display: block; margin-top: 3px; font-size: 0.8125rem; font-style: normal; font-stretch: 100%; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+
+  /* ---------- liveries ---------- */
+  .liveries { padding-block: 0 var(--section); }
+  .liveries h2 { margin-bottom: 10px; }
+  .liveries-lead { margin: 0 0 clamp(28px, 4vw, 44px); color: var(--muted); max-width: 60ch; }
+  .livery-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px 20px; }
+  .livery-list li { display: grid; gap: 4px; align-content: start; }
+  .livery-list img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; margin-bottom: 8px; }
+  .livery-list .num { font-style: italic; font-stretch: 125%; font-weight: 900; font-size: clamp(1.75rem, 1.2rem + 1.4vw, 2.5rem); line-height: 0.95; font-variant-numeric: tabular-nums; }
+  .livery-list .win .num { color: var(--red-ink); }
+  .livery-list .car { font-weight: 650; line-height: 1.3; }
+  .livery-list .meta { display: block; }
+  @media (max-width: 999px) {
+    .livery-list { grid-template-columns: 1fr; gap: 18px; }
+    .livery-list li { grid-template-columns: min(40%, 320px) minmax(0, 1fr); column-gap: 16px; row-gap: 4px; }
+    .livery-list img { grid-row: 1 / 4; margin: 0; }
+  }
 </style>
 <!-- PREVIEW-KEEP-END -->
 <script type="application/ld+json">
@@ -440,7 +461,7 @@
     <div class="hero-copy">
       <h1 class="display" id="name"><span class="line"><span>Michael</span></span><span class="line"><span>Velasquez</span></span></h1>
       <p class="hero-sub">Sim racing driver from the Philippines. This October and November he represents the country at two championships in Thailand.</p>
-      <p class="hero-next"><b>Next:</b> the Asia Pacific Motorsport Championship in Pattaya, 23 to 25 October.</p>
+      <p class="hero-next" id="hero-next"><b id="next-lead">Next:</b><span id="next-text"> the Asia Pacific Motorsport Championship in Pattaya, 23 to 25 October.</span></p>
       <ul class="links" aria-label="Message Michael or follow his channels">
         <li><a class="btn btn-primary" href="https://m.me/MVESimRacing">Message on Facebook</a></li>
         <li><a class="btn btn-quiet" href="https://www.instagram.com/mve_simracing">Instagram</a></li>
@@ -453,8 +474,8 @@
         <div class="cal-group">
           <h2>Coming up</h2>
           <ol>
-            <li class="next"><span class="when">23 to 25 Oct</span><span class="what">Asia Pacific Motorsport Championship</span><span class="where">Pattaya, Thailand. Philippine team, Assetto Corsa and iRacing.</span></li>
-            <li><span class="when">14 and 15 Nov</span><span class="what">TGR Asia eSports GT Championship</span><span class="where">Bangkok, Thailand. Team Philippines, Gran Turismo 7.</span></li>
+            <li class="next" data-start="2026-10-23" data-end="2026-10-25" data-next="the Asia Pacific Motorsport Championship in Pattaya, 23 to 25 October"><span class="when">23 to 25 Oct</span><span class="what">Asia Pacific Motorsport Championship</span><span class="where">Pattaya, Thailand. Philippine team, Assetto Corsa and iRacing.</span></li>
+            <li data-start="2026-11-14" data-end="2026-11-15" data-next="the TGR Asia eSports GT Championship in Bangkok, 14 and 15 November"><span class="when">14 and 15 Nov</span><span class="what">TGR Asia eSports GT Championship</span><span class="where">Bangkok, Thailand. Team Philippines, Gran Turismo 7.</span></li>
           </ol>
         </div>
         <div class="cal-group">
@@ -626,6 +647,48 @@
     </div>
   </section>
 
+  <section class="liveries wrap" id="liveries" aria-labelledby="liveries-title">
+    <h2 id="liveries-title">Liveries</h2>
+    <p class="liveries-lead">The cars he has raced and the numbers on them, newest first.</p>
+    <ol class="livery-list">
+      <li class="win">
+        <img src="assets/photos/liveries/34-gr-yaris-2026.jpg" width="800" height="600" loading="lazy" decoding="async"
+             alt="The number 34 Toyota GR Yaris, black with a red and white GR logo, kicking up dust on the dirt at Sardegna">
+        <span class="num">#34</span>
+        <span class="car">Toyota GR Yaris</span>
+        <span class="meta">TGR Philippines eSports GT Championship finals, Gran Turismo 7, 2026. He won Race 2 in it.</span>
+      </li>
+      <li>
+        <img src="assets/photos/liveries/27-gr86-2026.jpg" width="800" height="600" loading="lazy" decoding="async"
+             alt="The number 27 Toyota GR86 in silver with a red GR logo at Laguna Seca">
+        <span class="num">#27</span>
+        <span class="car">Toyota GR86</span>
+        <span class="meta">TGR Philippines online qualifiers, Gran Turismo 7, 2026</span>
+      </li>
+      <li>
+        <img src="assets/photos/liveries/19-porsche-cup-2026.jpg" width="800" height="600" loading="lazy" decoding="async"
+             alt="The number 19 Legion of Racers Porsche 911 GT3 Cup in white and purple at Fuji, another Cup car behind it">
+        <span class="num">#19</span>
+        <span class="car">Porsche 911 GT3 Cup</span>
+        <span class="meta">Legion of Racers, Porsche Esports Supercup Asia-Pacific, iRacing, 2026</span>
+      </li>
+      <li>
+        <img src="assets/photos/liveries/21-ferrari-296-2026.jpg" width="800" height="600" loading="lazy" decoding="async"
+             alt="The number 21 Ferrari 296 GT3 in white with black Legion of Racers lettering at Watkins Glen at dusk">
+        <span class="num">#21</span>
+        <span class="car">Ferrari 296 GT3</span>
+        <span class="meta">Legion of Racers colours, eRacingGP Endurance Edition, Assetto Corsa Competizione, 2026</span>
+      </li>
+      <li>
+        <img src="assets/photos/liveries/48-porsche-rsr-2024.jpg" width="800" height="600" loading="lazy" decoding="async"
+             alt="The number 48 Porsche 911 RSR in yellow with black and white stripes and Track Esports lettering at Watkins Glen in the rain">
+        <span class="num">#48</span>
+        <span class="car">Porsche 911 RSR</span>
+        <span class="meta">Track Esports, Porsche GT Cup, Assetto Corsa, 2024</span>
+      </li>
+    </ol>
+  </section>
+
   <section class="coaching wrap" id="coaching" aria-labelledby="coaching-title">
     <h2 id="coaching-title">Coaching</h2>
     <p class="lead">Michael coaches drivers in one-on-one sessions on Discord. He goes through your laps with you corner by corner to find where the time is going, then explains what to change in your driving and in the car’s setup.</p>
@@ -716,6 +779,38 @@
 
 <footer class="foot"><p>© 2026 Michael Velasquez</p></footer>
 
+<script>
+(function () {
+  var rows = [].slice.call(document.querySelectorAll(".cal li[data-start]"));
+  if (!rows.length) return;
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  function day(iso) { var p = iso.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  var first = null;
+  rows.forEach(function (li) {
+    var start = day(li.getAttribute("data-start"));
+    var end = day(li.getAttribute("data-end") || li.getAttribute("data-start"));
+    li.classList.remove("next");
+    if (today > end) { li.hidden = true; return; }
+    var days = Math.round((start - today) / 86400000);
+    var label = today >= start ? "Racing now" : days === 1 ? "Tomorrow" : "In " + days + " days";
+    var count = document.createElement("span");
+    count.className = "count";
+    count.textContent = label;
+    li.querySelector(".when").appendChild(count);
+    if (!first) { first = { li: li, label: label }; li.classList.add("next"); }
+  });
+  var group = rows[0].closest(".cal-group");
+  if (!first && group) group.hidden = true;
+  var card = document.getElementById("hero-next");
+  var lead = document.getElementById("next-lead");
+  var text = document.getElementById("next-text");
+  if (!card || !lead || !text) return;
+  if (!first) { card.hidden = true; return; }
+  lead.textContent = first.label === "Racing now" ? "Racing now:" : "Next, " + first.label.toLowerCase() + ":";
+  text.textContent = " " + first.li.getAttribute("data-next") + ".";
+})();
+</script>
 <script>
 (function () {
   var btn = document.getElementById("copy-btn");

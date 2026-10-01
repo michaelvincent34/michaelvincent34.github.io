@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Page not found | Michael Velasquez</title>
+<link rel="icon" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
+<style>
+  :root {
+    --bg: #F3F4F5; --ink: #15171A; --muted: #5A6069; --line: #D5D9DE;
+    --red-ink: #D10019; --btn: #D10019; --btn-hover: #B30016; --chip: #15171A;
+    --gutter: clamp(16px, 4vw, 48px);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #111316; --ink: #ECEEF0; --muted: #9AA1AA; --line: #2A2F35; --red-ink: #FF3347; --chip: #0B0C0E; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --bg: #111316; --ink: #ECEEF0; --muted: #9AA1AA; --line: #2A2F35; --red-ink: #FF3347; --chip: #0B0C0E; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--ink); font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--red-ink); outline-offset: 3px; }
+  .top { display: flex; align-items: center; padding: 12px var(--gutter); min-height: 64px; }
+  .brand { display: block; background: var(--chip); padding: 7px 10px; }
+  .brand img { display: block; height: 26px; width: auto; }
+  main { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 5vw, 72px); align-items: center; padding: clamp(24px, 6vw, 72px) var(--gutter) 64px; max-width: 1320px; margin: 0 auto; }
+  h1 { font-style: italic; font-stretch: 125%; font-weight: 900; text-transform: uppercase; font-size: clamp(2rem, 1.2rem + 3.6vw, 4.25rem); line-height: 0.9; margin: 0 0 22px; text-wrap: balance; }
+  p { margin: 0 0 28px; max-width: 42ch; font-size: 1.1875rem; line-height: 1.5; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid transparent; }
+  .btn-primary { background: var(--btn); color: #FFFFFF; }
+  .btn-quiet { border-color: var(--ink); }
+  @media (hover: hover) and (pointer: fine) { .btn-primary:hover { background: var(--btn-hover); } .btn-quiet:hover { background: var(--ink); color: var(--bg); } }
+  figure { margin: 0; }
+  figure img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+  figcaption { font-size: 0.875rem; color: var(--muted); padding-top: 8px; }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } figure { order: -1; } }
+</style>
+</head>
+<body>
+<header class="top"><a class="brand" href="/" aria-label="MVE SimRacing, main page"><img src="/assets/mve-logo-tight.png" alt="" width="437" height="178"></a></header>
+<main>
+  <div>
+    <h1>This page doesn’t exist</h1>
+    <p>The link may be old or mistyped. Everything on the site is on the main page.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/">Go to the main page</a>
+      <a class="btn btn-quiet" href="https://m.me/MVESimRacing">Message on Facebook</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/assets/photos/liveries/34-gr-yaris-2026.jpg" width="800" height="600" alt="The number 34 Toyota GR Yaris kicking up dust on the dirt at Sardegna">
+    <figcaption>The #34 GR Yaris on the dirt at Sardegna, the car he won Race 2 in at the 2026 TGR Philippines finals.</figcaption>
+  </figure>
+</main>
+</body>
+</html>
