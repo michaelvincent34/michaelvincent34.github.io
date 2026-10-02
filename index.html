@@ -471,6 +471,9 @@
   /* ---------- race day ---------- */
   .live::before { content: ""; display: inline-block; width: 0.62em; height: 0.62em; margin-right: 0.45em; background: var(--red); }
   .cal .count.live { color: var(--red-ink); }
+  .cal .watch { grid-column: 2; justify-self: start; margin-top: 6px; font-size: 0.9375rem; font-weight: 650; line-height: 1.3; }
+  .hero-next .watch { font-weight: 650; }
+  @media (hover: hover) and (pointer: fine) { .cal .watch:hover, .hero-next .watch:hover { color: var(--red-ink); } }
   @media (prefers-reduced-motion: no-preference) { .live::before { animation: live-pulse 1.2s ease-in-out 3; } }
   @keyframes live-pulse { 50% { opacity: 0.2; } }
 </style>
@@ -834,6 +837,16 @@
   var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   function day(iso) { var p = iso.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
   var first = null;
+  var twitch = document.querySelector('.channel-list a[href*="twitch.tv/"]');
+  var watchUrl = twitch ? twitch.href : "https://www.twitch.tv/michaelvelasquez34";
+  function watchLink(where) {
+    var a = document.createElement("a");
+    a.className = "watch";
+    a.href = watchUrl;
+    a.textContent = "Watch on Twitch";
+    a.setAttribute("data-goatcounter-click", "twitch-raceday-" + where);
+    return a;
+  }
   rows.forEach(function (li) {
     var start = day(li.getAttribute("data-start"));
     var end = day(li.getAttribute("data-end") || li.getAttribute("data-start"));
@@ -845,6 +858,7 @@
     count.className = label === "Racing now" ? "count live" : "count";
     count.textContent = label;
     li.querySelector(".when").appendChild(count);
+    if (label === "Racing now") li.appendChild(watchLink("calendar"));
     if (!first) { first = { li: li, label: label }; li.classList.add("next"); }
   });
   var group = rows[0].closest(".cal-group");
@@ -861,6 +875,11 @@
   lead.textContent = racing ? "Racing now:" : "Next, " + first.label.toLowerCase() + ":";
   if (racing) lead.classList.add("live");
   text.textContent = " " + first.li.getAttribute("data-next") + ".";
+  if (racing) {
+    card.appendChild(document.createTextNode(" "));
+    card.appendChild(watchLink("card"));
+    card.appendChild(document.createTextNode("."));
+  }
 })();
 </script>
 <script>
