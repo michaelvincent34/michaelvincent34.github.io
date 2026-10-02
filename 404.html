@@ -38,7 +38,17 @@
   figure { margin: 0; }
   figure img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
   figcaption { font-size: 0.875rem; color: var(--muted); padding-top: 8px; }
-  @media (max-width: 760px) { main { grid-template-columns: 1fr; } figure { order: -1; } }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } }
+  .gantry { display: grid; justify-items: center; gap: 12px; width: 100%; padding: 22px 16px 18px; margin: 0; border: 0; border-radius: 0;
+            background: #0B0C0E; color: #FFFFFF; font: inherit; cursor: pointer; touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
+  .gantry[hidden] { display: none; }
+  .gantry .lights { display: flex; gap: clamp(10px, 2.4vw, 16px); }
+  .gantry .lights span { width: clamp(30px, 7vw, 44px); height: clamp(30px, 7vw, 44px); border-radius: 50%; background: #2A2F35; }
+  .gantry .lights .on { background: #FF0019; }
+  .gantry .time { font-style: italic; font-stretch: 125%; font-weight: 900; font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem); line-height: 1; min-height: 1em; font-variant-numeric: tabular-nums; }
+  .gantry .time.jump { color: #FF3347; }
+  .gantry .help { font-size: 0.9375rem; line-height: 1.45; color: #C9CED4; max-width: 42ch; text-align: center; text-wrap: balance; }
+  .gantry:focus-visible { outline: 3px solid var(--red-ink); outline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -54,8 +64,55 @@
   </div>
   <figure>
     <img src="/assets/photos/liveries/34-gr-yaris-2026.jpg" width="800" height="600" alt="The number 34 Toyota GR Yaris kicking up dust on the dirt at Sardegna">
+    <button class="gantry" type="button" id="gantry" hidden>
+      <span class="lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+      <span class="time" id="gantry-time" aria-live="polite"></span>
+      <span class="help" id="gantry-help">Try a race start while you’re here. Press the lights to begin, then press again the moment all five go out.</span>
+    </button>
     <figcaption>The #34 GR Yaris on the dirt at Sardegna, the car he won Race 2 in at the 2026 TGR Philippines finals.</figcaption>
   </figure>
 </main>
+<script>
+(function () {
+  var g = document.getElementById("gantry");
+  if (!g || !window.performance) return;
+  var lights = [].slice.call(g.querySelectorAll(".lights span"));
+  var time = document.getElementById("gantry-time");
+  var help = document.getElementById("gantry-help");
+  var state = "idle", timers = [], out = 0, best = null;
+  function clear() { timers.forEach(clearTimeout); timers = []; }
+  function dark() { lights.forEach(function (l) { l.classList.remove("on"); }); }
+  function secs(x) { return x.toFixed(3) + "\u00a0s"; }
+  function start() {
+    clear(); dark(); state = "lights";
+    time.textContent = ""; time.classList.remove("jump");
+    help.textContent = "Wait for the lights to go out.";
+    lights.forEach(function (l, i) { timers.push(setTimeout(function () { l.classList.add("on"); }, (i + 1) * 1000)); });
+    timers.push(setTimeout(function () { dark(); out = performance.now(); state = "go"; }, 5500 + Math.random() * 2000));
+  }
+  function hit() {
+    if (state === "lights") {
+      clear(); dark(); state = "done";
+      time.textContent = "Jump start"; time.classList.add("jump");
+      help.textContent = "You went before the lights went out. Press the lights to try again.";
+      return;
+    }
+    if (state === "go") {
+      var r = (performance.now() - out) / 1000;
+      state = "done";
+      best = best === null ? r : Math.min(best, r);
+      time.textContent = secs(r);
+      help.textContent = "Your best on this visit is " + secs(best) + ". Press the lights to go again.";
+      return;
+    }
+    start();
+  }
+  g.addEventListener("pointerdown", function (e) { if (e.button > 0) return; e.preventDefault(); hit(); });
+  g.addEventListener("keydown", function (e) {
+    if (e.key === " " || e.key === "Enter") { e.preventDefault(); if (!e.repeat) hit(); }
+  });
+  g.hidden = false;
+})();
+</script>
 </body>
 </html>
