@@ -481,6 +481,15 @@
   @media (hover: hover) and (pointer: fine) { .cal .watch:hover, .hero-next .watch:hover { color: var(--red-ink); } }
   @media (prefers-reduced-motion: no-preference) { .live::before { animation: live-pulse 1.2s ease-in-out 3; } }
   @keyframes live-pulse { 50% { opacity: 0.2; } }
+  /* ---------- press: newest six, the rest folded ---------- */
+  .press-more { margin-top: 14px; }
+  .press-more summary { display: inline-block; cursor: pointer; font-weight: 700; padding: 8px 0; list-style: none;
+    text-decoration: underline; text-decoration-color: var(--red-ink); text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+  .press-more summary::-webkit-details-marker { display: none; }
+  .press-more .less, .press-more[open] .more { display: none; }
+  .press-more[open] .less { display: inline; }
+  .press-more[open] summary { margin-bottom: 14px; }
+  @media (hover: hover) and (pointer: fine) { .press-more summary:hover { color: var(--red-ink); } }
 </style>
 <!-- PREVIEW-KEEP-END -->
 <script type="application/ld+json">
@@ -580,19 +589,24 @@
           <li><a href="https://gadgetsmagazine.com.ph/technology/gaming/tgr-philippines-esports-gt-championship-2">TEAM PHILIPPINES HEADS TO TGR ASIA ESPORTS GT FINALS IN BANGKOK</a><span class="meta">Gadgets Magazine, 4 October 2026</span></li>
           <li><a href="https://tribune.net.ph/2026/10/02/toyota-sends-filipino-sim-racers-to-asia-finals">Toyota sends Filipino sim racers to Asia finals</a><span class="meta">Daily Tribune, 3 October 2026</span></li>
           <li><a href="https://www.topgear.com.ph/news/racing-news/team-ph-tgr-asia-gt-championship-2026-a6888-20261002">Behold, Team PH for the 2026 TGR Asia Esports GT Championships</a><span class="meta">Top Gear Philippines, 2 October 2026, with a profile of each driver on the team</span></li>
-          <li><a href="https://2ndopinion.ph/filipino-sim-racers-head-to-thailand-for-toyota/">Filipino sim racers head to Thailand for Toyota</a><span class="meta">2nd Opinion, 2 October 2026, on how he held the lead in Race 2 at Sardegna from the first lap</span></li>
-          <li><a href="https://www.carguide.ph/2026/10/this-is-team-philippines-at-2026-toyota.html">This Is Team Philippines At The 2026 Toyota Gazoo Racing Asia eSports GT Championships</a><span class="meta">CarGuide.PH, 2 October 2026</span></li>
-          <li><a href="https://astig.ph/toyota-gazoo-racing-philippines-esports-gt-championship-2026-2/">Three Pinoy sim racers are headed to Thailand for the 2026 TOYOTA GAZOO Racing Asia Esports GT Championship</a><span class="meta">Astig.ph, 1 October 2026</span></li>
-          <li><a href="https://timeattackmanila.com/team-philippines-to-defend-title-at-asia-pacific-motorsport-cship-thailand-2026/">Team Philippines to defend title at Asia Pacific Motorsport C’ship Thailand 2026</a><span class="meta">Time Attack Manila, 30 September 2026, which names him as the team’s esports driver</span></li>
-          <li><a href="https://www.autoindustriya.com/auto-industry-news/2026-toyota-gr-ph-esports-gt-championship-here-are-the-winners.html">2026 Toyota GR PH Esports GT Championship: Here are the winners</a><span class="meta">AutoIndustriya, 28 September 2026, on how he earned the third seat on Team Philippines</span></li>
-          <li><a href="https://theautoph.com/this-trio-will-represent-ph-at-the-tgr-asia-esports-gt-championship-2026/">This trio will represent PH at the TGR Asia eSports GT Championship 2026</a><span class="meta">The Auto PH, 28 September 2026</span></li>
-          <li><a href="https://www.zigwheels.ph/car-news/toyota-motor-ph-identifies-2026-tgr-asia-esports-gt-championships-bound-racers">Toyota Motor PH identifies 2026 TGR Asia eSports GT Championships-bound racers</a><span class="meta">Zigwheels PH, 28 September 2026</span></li>
-          <li><a href="https://www.topgear.com.ph/news/racing-news/toyota-esports-gt-championship-ph-2025-winners-a2578-20251027">2025 Toyota Gazoo Racing eSports GT PH winners to move up to Asia finals</a><span class="meta">Top Gear Philippines, 27 October 2025, on his last-lap pass to win Race 3 of the finals</span></li>
-          <li><a href="https://www.zigwheels.ph/car-news/zigwheels-phs-premiere-ignition-z-sim-racing-event-a-huge-success">Zigwheels PH’s premiere Ignition Z sim racing event a ‘huge success’</a><span class="meta">Zigwheels PH, 21 October 2025</span></li>
-          <li><a href="https://www.carmudi.com.ph/journal/1st-ever-ignition-z-by-zigwheels-ph-ends-on-high-note/">1st-ever Ignition Z by Zigwheels PH ends on high note</a><span class="meta">Carmudi, 21 October 2025</span></li>
-          <li><a href="https://www.bworldonline.com/velocity/2025/10/20/706378/digital-swagger/">Digital swagger</a><span class="meta">BusinessWorld, 20 October 2025, which names him in the top 11 of the finals</span></li>
-          <li><a href="https://tribune.net.ph/2025/10/04/top-40-sim-racers-gear-up-for-tgr-philippines-esports-gt-championship-finals">Top 40 sim racers gear up for TGR Philippines eSports GT Championship Finals</a><span class="meta">Daily Tribune, 4 October 2025, which lists him eighth among the quarterfinal qualifiers</span></li>
         </ul>
+        <details class="press-more">
+          <summary><span class="more">Show all 18 articles</span><span class="less">Show fewer</span></summary>
+          <ul class="press">
+            <li><a href="https://2ndopinion.ph/filipino-sim-racers-head-to-thailand-for-toyota/">Filipino sim racers head to Thailand for Toyota</a><span class="meta">2nd Opinion, 2 October 2026, on how he held the lead in Race 2 at Sardegna from the first lap</span></li>
+            <li><a href="https://www.carguide.ph/2026/10/this-is-team-philippines-at-2026-toyota.html">This Is Team Philippines At The 2026 Toyota Gazoo Racing Asia eSports GT Championships</a><span class="meta">CarGuide.PH, 2 October 2026</span></li>
+            <li><a href="https://astig.ph/toyota-gazoo-racing-philippines-esports-gt-championship-2026-2/">Three Pinoy sim racers are headed to Thailand for the 2026 TOYOTA GAZOO Racing Asia Esports GT Championship</a><span class="meta">Astig.ph, 1 October 2026</span></li>
+            <li><a href="https://timeattackmanila.com/team-philippines-to-defend-title-at-asia-pacific-motorsport-cship-thailand-2026/">Team Philippines to defend title at Asia Pacific Motorsport C’ship Thailand 2026</a><span class="meta">Time Attack Manila, 30 September 2026, which names him as the team’s esports driver</span></li>
+            <li><a href="https://www.autoindustriya.com/auto-industry-news/2026-toyota-gr-ph-esports-gt-championship-here-are-the-winners.html">2026 Toyota GR PH Esports GT Championship: Here are the winners</a><span class="meta">AutoIndustriya, 28 September 2026, on how he earned the third seat on Team Philippines</span></li>
+            <li><a href="https://theautoph.com/this-trio-will-represent-ph-at-the-tgr-asia-esports-gt-championship-2026/">This trio will represent PH at the TGR Asia eSports GT Championship 2026</a><span class="meta">The Auto PH, 28 September 2026</span></li>
+            <li><a href="https://www.zigwheels.ph/car-news/toyota-motor-ph-identifies-2026-tgr-asia-esports-gt-championships-bound-racers">Toyota Motor PH identifies 2026 TGR Asia eSports GT Championships-bound racers</a><span class="meta">Zigwheels PH, 28 September 2026</span></li>
+            <li><a href="https://www.topgear.com.ph/news/racing-news/toyota-esports-gt-championship-ph-2025-winners-a2578-20251027">2025 Toyota Gazoo Racing eSports GT PH winners to move up to Asia finals</a><span class="meta">Top Gear Philippines, 27 October 2025, on his last-lap pass to win Race 3 of the finals</span></li>
+            <li><a href="https://www.zigwheels.ph/car-news/zigwheels-phs-premiere-ignition-z-sim-racing-event-a-huge-success">Zigwheels PH’s premiere Ignition Z sim racing event a ‘huge success’</a><span class="meta">Zigwheels PH, 21 October 2025</span></li>
+            <li><a href="https://www.carmudi.com.ph/journal/1st-ever-ignition-z-by-zigwheels-ph-ends-on-high-note/">1st-ever Ignition Z by Zigwheels PH ends on high note</a><span class="meta">Carmudi, 21 October 2025</span></li>
+            <li><a href="https://www.bworldonline.com/velocity/2025/10/20/706378/digital-swagger/">Digital swagger</a><span class="meta">BusinessWorld, 20 October 2025, which names him in the top 11 of the finals</span></li>
+            <li><a href="https://tribune.net.ph/2025/10/04/top-40-sim-racers-gear-up-for-tgr-philippines-esports-gt-championship-finals">Top 40 sim racers gear up for TGR Philippines eSports GT Championship Finals</a><span class="meta">Daily Tribune, 4 October 2025, which lists him eighth among the quarterfinal qualifiers</span></li>
+          </ul>
+        </details>
       </div>
     </div>
   </section>
