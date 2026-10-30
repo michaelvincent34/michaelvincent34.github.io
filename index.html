@@ -520,6 +520,22 @@
   .routes p { font-size: 1.0625rem; }
   .routes .contact-actions { margin-top: 20px; }
   @media (max-width: 760px) { .routes { grid-template-columns: 1fr; } }
+
+  /* ---------- highlights above the results archive, and the daylight band (30 Oct 2026) ---------- */
+  .highlights { list-style: none; margin: 0 0 clamp(48px, 6vw, 80px); padding: 0; }
+  .highlights li { display: grid; grid-template-columns: 9rem minmax(10rem, 16rem) minmax(0, 1fr); gap: 4px 32px; align-items: baseline;
+    padding: 22px 0; border-top: 1px solid var(--line); }
+  .hl-when { grid-row: span 2; font-size: 0.9375rem; font-weight: 600; color: var(--muted); }
+  .hl-res { grid-row: span 2; font-style: italic; font-stretch: 125%; font-weight: 900; font-size: clamp(2.25rem, 1.4rem + 2.6vw, 3.75rem); line-height: 0.95; white-space: nowrap; }
+  .highlights .win .hl-res { color: var(--red-ink); }
+  .hl-what { font-weight: 700; font-size: 1.1875rem; line-height: 1.3; }
+  .hl-how { color: var(--muted); line-height: 1.5; }
+  @media (max-width: 760px) {
+    .highlights li { grid-template-columns: 1fr; gap: 4px; }
+    .hl-when, .hl-res { grid-row: auto; }
+    .hl-res { margin: 2px 0 6px; }
+  }
+  .band-day { margin-bottom: var(--section); }
 </style>
 <!-- PREVIEW-KEEP-END -->
 <script type="application/ld+json">
@@ -700,6 +716,27 @@
       <h2 id="results-title">Results since 2015</h2>
     </div>
 
+    <ol class="highlights" aria-label="Highlights">
+      <li>
+        <span class="hl-when">Oct 2026</span>
+        <span class="hl-res">P7</span>
+        <span class="hl-what">Asia Pacific Motorsport Championship, both grand finals</span>
+        <span class="hl-how">He reached the ten-driver grand final in both Assetto Corsa and iRacing for the Philippine team.</span>
+      </li>
+      <li class="win">
+        <span class="hl-when">Sep 2026</span>
+        <span class="hl-res">P1</span>
+        <span class="hl-what">TGR Philippines eSports GT Championship finals, Race 2</span>
+        <span class="hl-how">He led all ten laps on dirt at Sardegna in the GR Yaris.</span>
+      </li>
+      <li class="win">
+        <span class="hl-when">Oct 2025</span>
+        <span class="hl-res">P1</span>
+        <span class="hl-what">TGR Philippines eSports GT Championship finals, Race 3</span>
+        <span class="hl-how">He won at Spa in the GR010 Hybrid with a pass on the last lap.</span>
+      </li>
+    </ol>
+
     <div class="year">
       <h3 class="year-label">2026</h3>
       <ul class="entries">
@@ -753,6 +790,12 @@
       </ul>
     </div>
   </section>
+
+  <figure class="band band-day">
+    <img src="assets/photos/laguna-27-gr86.jpg" width="1920" height="640" loading="lazy" decoding="async"
+         alt="The number 27 Toyota GR86 in silver with a red GR logo through a corner at Laguna Seca">
+    <figcaption>The #27 GR86 at Laguna Seca in the TGR Philippines online qualifiers, Gran Turismo 7, 2026.</figcaption>
+  </figure>
 
   <section class="liveries wrap" id="liveries" aria-labelledby="liveries-title">
     <h2 id="liveries-title">Liveries</h2>
