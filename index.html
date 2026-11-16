@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Michael Velasquez is a sim racing driver from the Philippines. In 2026 he finished 7th in both the Assetto Corsa and iRacing grand finals at the Asia Pacific Motorsport Championship in Pattaya, and he represents the country at the TGR Asia eSports GT Championship in Bangkok after finishing second in the Sporting Class of the TGR Philippines eSports GT Championship. In 2024 he won three Pro-class championships.">
+<meta name="description" content="Michael Velasquez is a sim racing driver from the Philippines. In 2026 he raced for Team Philippines at the TGR Asia eSports GT Championship in Kuala Lumpur, where the team finished second and he finished 8th of 15 drivers, and he finished 7th in both the Assetto Corsa and iRacing grand finals at the Asia Pacific Motorsport Championship in Pattaya. In 2024 he won three Pro-class championships.">
 <link rel="icon" href="assets/favicon.png">
 <link rel="canonical" href="https://michaelvincent34.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Michael Velasquez, sim racing driver">
-<meta property="og:description" content="Sim racing driver from the Philippines. 7th in both esports grand finals at the 2026 Asia Pacific Motorsport Championship, and next at the TGR Asia eSports GT Championship in Bangkok. Open to sponsorships.">
+<meta property="og:description" content="Sim racing driver from the Philippines. Second in Asia with Team Philippines at the 2026 TGR Asia eSports GT Championship, and 7th in both esports grand finals at the Asia Pacific Motorsport Championship. Open to sponsorships.">
 <meta property="og:url" content="https://michaelvincent34.github.io/">
-<meta property="og:image" content="https://michaelvincent34.github.io/assets/og-image-2026-10b.jpg">
-<meta property="og:image:alt" content="Michael Velasquez in his team shirt beside his name, the TGR Asia eSports GT Championship in November 2026, his two 7th places at the Asia Pacific Motorsport Championship, and the words Open to sponsorships">
+<meta property="og:image" content="https://michaelvincent34.github.io/assets/og-image-2026-11.jpg">
+<meta property="og:image:alt" content="Michael Velasquez in his team shirt beside his name, Team Philippines' second place at the TGR Asia eSports GT Championship in November 2026, his two 7th places at the Asia Pacific Motorsport Championship, and the words Open to sponsorships">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -627,6 +627,12 @@
   .collage figcaption { padding-top: 8px; text-align: right; }
   .collage .where { display: block; color: var(--ink); font-weight: 600; }
   .collage .league { display: block; color: var(--muted); }
+  .collage .credit { display: block; color: var(--muted); font-size: 0.8125rem; }
+  .ev-1 { grid-column: 1 / 8; }
+  .ev-2 { grid-column: 9 / 13; margin-top: clamp(60px, 8vw, 120px); }
+  .ev-3 { grid-column: 2 / 7; margin-top: clamp(32px, 4vw, 56px); }
+  .ev-4 { grid-column: 7 / 13; margin-top: clamp(32px, 4vw, 56px); }
+  .shot-1 { margin-top: clamp(32px, 4vw, 56px); }
   .shot-1 { grid-column: 1 / 7; }
   .shot-2 { grid-column: 8 / 12; margin-top: clamp(80px, 14vw, 200px); }
   .shot-3 { grid-column: 3 / 8; margin-top: clamp(32px, 4vw, 56px); }
@@ -637,7 +643,8 @@
   @media (max-width: 860px) {
     .collage { grid-template-columns: repeat(6, minmax(0, 1fr)); row-gap: 28px; }
     .collage figure { margin-top: 0; }
-    .shot-1, .shot-3, .shot-5, .shot-7 { grid-column: 1 / 7; }
+    .ev-1, .ev-3, .ev-4, .shot-1, .shot-3, .shot-5, .shot-7 { grid-column: 1 / 7; }
+    .ev-2 { grid-column: 2 / 6; }
     .shot-2, .shot-6 { grid-column: 1 / 4; }
     .shot-4 { grid-column: 4 / 7; }
   }
@@ -701,8 +708,8 @@
     <div class="hero-copy">
       <h1 class="display" id="name"><span class="line"><span>Michael</span></span><span class="line"><span>Velasquez</span></span></h1>
       <p class="hero-open">Open to sponsorships</p>
-      <p class="hero-sub">Sim racing driver from the Philippines. After reaching both esports grand finals at the Asia Pacific Motorsport Championship in October, he races for the country in Bangkok in November.</p>
-      <p class="hero-next" id="hero-next"><b id="next-lead">Next:</b><span id="next-text"> the TGR Asia eSports GT Championship in Bangkok, 14 and 15 November.</span></p>
+      <p class="hero-sub">Sim racing driver from the Philippines. In November he raced for Team Philippines at his first TGR Asia eSports GT Championship, and the team finished second in Asia.</p>
+      <p class="hero-next" id="hero-next"><b id="next-lead">Latest:</b><span id="next-text"> Team Philippines finished second at the TGR Asia eSports GT Championship in Kuala Lumpur on 15 November.</span></p>
       <ul class="links" aria-label="Message Michael or follow his channels">
         <li><a class="btn btn-primary" href="https://m.me/MVESimRacing">Message on Facebook</a></li>
         <li><a class="btn btn-quiet" href="https://www.instagram.com/mve_simracing">Instagram</a></li>
@@ -713,14 +720,9 @@
       </ul>
       <div class="cal">
         <div class="cal-group">
-          <h2>Coming up</h2>
+          <h2>Latest results</h2>
           <ol>
-            <li class="next" data-start="2026-11-14" data-end="2026-11-15" data-next="the TGR Asia eSports GT Championship in Bangkok, 14 and 15 November" data-title="Racing now in Bangkok"><span class="when">14 and 15 Nov</span><span class="what">TGR Asia eSports GT Championship</span><span class="where">Bangkok, Thailand. Team Philippines, Gran Turismo 7.</span></li>
-          </ol>
-        </div>
-        <div class="cal-group">
-          <h2>Latest result</h2>
-          <ol>
+            <li><span class="when">15 Nov</span><span class="what">TGR Asia eSports GT Championship</span><span class="where">Team Philippines 2nd, and 8th of 15 drivers for Michael, in Kuala Lumpur, Malaysia.</span></li>
             <li><span class="when">24 and 25 Oct</span><span class="what">Asia Pacific Motorsport Championship</span><span class="where">7th in the grand finals of both Assetto Corsa and iRacing in Pattaya, Thailand.</span></li>
           </ol>
         </div>
@@ -760,19 +762,20 @@
       <div class="about-copy">
         <h2 id="about-title">About</h2>
         <p>Michael started sim racing in rFactor on a low-end laptop with a gamepad, and in 2015 he won his first championship that way. He later reached a 2.3k iRating on iRacing’s old road licence using a Logitech F310, and in 2024 he won two <span class="nw">Pro-class</span> championships on a controller. He has raced on a Moza R9 direct-drive wheel since then.</p>
-        <p>He races for Legion of Racers Ascent and coaches other drivers. His focus is competitive esports. In 2026 he raced the Porsche and Ferrari Esports <span class="nw">Asia-Pacific</span> qualifiers, finished second in the Sporting Class of the TGR Philippines eSports GT Championship, and was chosen with two other drivers to represent the Philippines at the TGR Asia eSports GT Championship in Bangkok in November. He also represented the Philippines in both the Assetto Corsa and iRacing categories at the Asia Pacific Motorsport Championship in Pattaya in October, where he reached the grand final in both and finished 7th each time.</p>
+        <p>He races for Legion of Racers Ascent and coaches other drivers. His focus is competitive esports. In 2026 he raced the Porsche and Ferrari Esports <span class="nw">Asia-Pacific</span> qualifiers, finished second in the Sporting Class of the TGR Philippines eSports GT Championship, and was one of the three drivers who represented the Philippines at the TGR Asia eSports GT Championship in Kuala Lumpur in November, where Team Philippines finished second. He also represented the Philippines in both the Assetto Corsa and iRacing categories at the Asia Pacific Motorsport Championship in Pattaya in October, where he reached the grand final in both and finished 7th each time.</p>
         <h3 class="press-title">In the press</h3>
         <ul class="press">
+          <li><a href="https://www.carguide.ph/2026/11/toyota-gazoo-racing-esports-2026-asia.html">Toyota Gazoo Racing eSports 2026 Asia Finals Set For November 15</a><span class="meta">CarGuide.PH, 9 November 2026, which names him as one of Team Philippines' three drivers</span></li>
           <li><a href="https://www.speed.ph/filipino-sim-racers-head-to-thailand-for-tgr-esports-gt-championships/">Filipino sim racers head to Thailand for TGR Esports GT Championships</a><span class="meta">Speed.ph, 5 October 2026</span></li>
           <li><a href="https://bworldonline.com/spotlight/2026/10/05/784090/young-filipino-sim-racers-head-to-thailand-to-fulfill-sim-racing-dreams/">Young Filipino sim racers head to Thailand to fulfill sim racing dreams</a><span class="meta">BusinessWorld, 5 October 2026</span></li>
           <li><a href="https://www.esquiremag.ph/wheels/cars/three-filipino-sim-racers-take-team-philippines-spots-at-toyota-gazoo-racing-asia-finals-in-bangkok-a4703-20261004-bsc">Three Filipino Sim Racers Take Team Philippines Spots at Toyota Gazoo Racing Asia Finals in Bangkok</a><span class="meta">Esquire Philippines, 4 October 2026, on how he took the third and final slot on points</span></li>
           <li><a href="https://gadgetsmagazine.com.ph/technology/gaming/tgr-philippines-esports-gt-championship-2">TEAM PHILIPPINES HEADS TO TGR ASIA ESPORTS GT FINALS IN BANGKOK</a><span class="meta">Gadgets Magazine, 4 October 2026</span></li>
           <li><a href="https://tribune.net.ph/2026/10/02/toyota-sends-filipino-sim-racers-to-asia-finals">Toyota sends Filipino sim racers to Asia finals</a><span class="meta">Daily Tribune, 3 October 2026</span></li>
-          <li><a href="https://www.topgear.com.ph/news/racing-news/team-ph-tgr-asia-gt-championship-2026-a6888-20261002">Behold, Team PH for the 2026 TGR Asia Esports GT Championships</a><span class="meta">Top Gear Philippines, 2 October 2026, with a profile of each driver on the team</span></li>
         </ul>
         <details class="press-more">
-          <summary><span class="more">Show all 18 articles</span><span class="less">Show fewer</span></summary>
+          <summary><span class="more">Show all 19 articles</span><span class="less">Show fewer</span></summary>
           <ul class="press">
+            <li><a href="https://www.topgear.com.ph/news/racing-news/team-ph-tgr-asia-gt-championship-2026-a6888-20261002">Behold, Team PH for the 2026 TGR Asia Esports GT Championships</a><span class="meta">Top Gear Philippines, 2 October 2026, with a profile of each driver on the team</span></li>
             <li><a href="https://2ndopinion.ph/filipino-sim-racers-head-to-thailand-for-toyota/">Filipino sim racers head to Thailand for Toyota</a><span class="meta">2nd Opinion, 2 October 2026, on how he held the lead in Race 2 at Sardegna from the first lap</span></li>
             <li><a href="https://www.carguide.ph/2026/10/this-is-team-philippines-at-2026-toyota.html">This Is Team Philippines At The 2026 Toyota Gazoo Racing Asia eSports GT Championships</a><span class="meta">CarGuide.PH, 2 October 2026</span></li>
             <li><a href="https://astig.ph/toyota-gazoo-racing-philippines-esports-gt-championship-2026-2/">Three Pinoy sim racers are headed to Thailand for the 2026 TOYOTA GAZOO Racing Asia Esports GT Championship</a><span class="meta">Astig.ph, 1 October 2026</span></li>
@@ -791,7 +794,27 @@
     </div>
   </section>
 
-  <section class="collage" id="collage" aria-label="Cars he has raced, 2024 to 2026">
+  <section class="collage" id="collage" aria-label="Photos from 2024 to 2026, from the TGR Asia finals and the cars he has raced">
+    <figure class="ev-1" data-speed="0">
+      <img src="assets/photos/tgr-asia/kl-trophy.jpg" width="1200" height="800" loading="lazy" decoding="async"
+           alt="Team Philippines lifting their trophy on stage at the TGR Asia eSports GT Championship in Kuala Lumpur">
+      <figcaption><span class="where">Kuala Lumpur, 2026</span><span class="league">TGR Asia eSports GT Championship, <span class="nw">Gran Turismo 7</span></span><span class="credit">Photo: All Is Amazing</span></figcaption>
+    </figure>
+    <figure class="ev-2" data-speed="0.1">
+      <img src="assets/photos/tgr-asia/kl-thumbs-up.jpg" width="800" height="1200" loading="lazy" decoding="async"
+           alt="Michael smiling with a thumbs up in his rig during free practice">
+      <figcaption><span class="where">Kuala Lumpur, 2026</span><span class="league">TGR Asia eSports GT Championship, <span class="nw">Gran Turismo 7</span></span><span class="credit">Photo: All Is Amazing</span></figcaption>
+    </figure>
+    <figure class="ev-3" data-speed="0">
+      <img src="assets/photos/tgr-asia/kl-team-rigs.jpg" width="1200" height="800" loading="lazy" decoding="async"
+           alt="The three Team Philippines drivers together at the rigs on finals day">
+      <figcaption><span class="where">Kuala Lumpur, 2026</span><span class="league">TGR Asia eSports GT Championship, <span class="nw">Gran Turismo 7</span></span><span class="credit">Photo: All Is Amazing</span></figcaption>
+    </figure>
+    <figure class="ev-4" data-speed="0.1">
+      <img src="assets/photos/tgr-asia/kl-racing.jpg" width="1200" height="800" loading="lazy" decoding="async"
+           alt="Michael racing at his rig on finals day, the event screens lit red behind him">
+      <figcaption><span class="where">Kuala Lumpur, 2026</span><span class="league">TGR Asia eSports GT Championship, <span class="nw">Gran Turismo 7</span></span><span class="credit">Photo: All Is Amazing</span></figcaption>
+    </figure>
     <figure class="shot-1" data-speed="0">
       <img src="assets/photos/fuji-19.jpg" width="960" height="540" loading="lazy" decoding="async"
            alt="The number 19 Porsche 911 GT3 Cup ahead of another Cup car at Fuji Speedway, Porsche Esports Supercup on iRacing">
@@ -834,8 +857,12 @@
       <h2 id="season-title">2026 season</h2>
       <ul class="season-list">
         <li>
+          <h3>TGR Asia eSports GT Championship</h3>
+          <p>In his first Asia finals, raced in Kuala Lumpur on 15 November, he finished 8th of 15 drivers from five countries, and Team Philippines, with Russel Reyes and Enzo Ison, finished second in the team championship. The three races were in Gran Turismo 7: the GR Supra at Grand Valley, the GR Yaris at the Nürburgring GP and the SF23 at Fuji.</p>
+        </li>
+        <li>
           <h3>TGR Philippines eSports GT Championship</h3>
-          <p>At the Gran Turismo 7 national finals in Pasay on 27 September he won Race 2 on dirt at Sardegna and finished second in the Sporting Class, the third highest score across the Sporting and Junior classes. That made him one of the three drivers chosen to represent the Philippines at the TGR Asia eSports GT Championship in Bangkok on 14 and 15 November.</p>
+          <p>At the Gran Turismo 7 national finals in Pasay on 27 September he won Race 2 on dirt at Sardegna and finished second in the Sporting Class, the third highest score across the Sporting and Junior classes. That made him one of the three drivers chosen to represent the Philippines at the TGR Asia eSports GT Championship.</p>
         </li>
         <li>
           <h3>Asia Pacific Motorsport Championship</h3>
@@ -868,6 +895,12 @@
 
     <ol class="highlights" aria-label="Highlights">
       <li>
+        <span class="hl-when">Nov 2026</span>
+        <span class="hl-res">P2</span>
+        <span class="hl-what">TGR Asia eSports GT Championship, team championship</span>
+        <span class="hl-how">Team Philippines finished second in Asia, and he finished 8th of 15 drivers in his first Asia finals.</span>
+      </li>
+      <li>
         <span class="hl-when">Oct 2026</span>
         <span class="hl-res">P7</span>
         <span class="hl-what">Asia Pacific Motorsport Championship, both grand finals</span>
@@ -890,9 +923,9 @@
     <div class="year">
       <h3 class="year-label">2026</h3>
       <ul class="entries">
+        <li class="entry"><span class="res">P2</span><span class="ev">TGR Asia eSports GT Championship, team championship</span><span class="meta">Team Philippines in Kuala Lumpur, 15 November, with Michael 8th of 15 in the drivers' championship</span></li>
         <li class="entry"><span class="res">P7</span><span class="ev">Asia Pacific Motorsport Championship, Assetto Corsa grand final</span><span class="meta">Pattaya, 24 October, for the Philippine team</span></li>
         <li class="entry"><span class="res">P7</span><span class="ev">Asia Pacific Motorsport Championship, iRacing grand final</span><span class="meta">Pattaya, 25 October, for the Philippine team</span></li>
-        <li class="entry"><span class="res">Selected</span><span class="ev">TGR Asia eSports GT Championship, Bangkok</span><span class="meta">One of three drivers representing the Philippines, 14 and 15 November</span></li>
         <li class="entry win"><span class="res">P1</span><span class="ev">AAP National Esports Championship, Circuit round 1</span><span class="meta">Pro class, Le Mans Ultimate</span></li>
         <li class="entry win"><span class="res">P1</span><span class="ev">Toyota GAZOO Racing Philippines eSports GT Championship, finals Race 2</span><span class="meta">GR Yaris on dirt at Sardegna, led all 10 laps</span></li>
         <li class="entry"><span class="res">P2</span><span class="ev">Toyota GAZOO Racing Philippines eSports GT Championship</span><span class="meta">Sporting Class, Gran Turismo 7, third highest scorer across both classes</span></li>
