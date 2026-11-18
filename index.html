@@ -653,6 +653,19 @@
   .season-copy { max-width: none; }
   .season-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 26px clamp(32px, 4vw, 56px); }
   .season-list li { max-width: 60ch; }
+
+  /* ---------- hero trophy photo (18 Nov 2026) ---------- */
+  /* the whole photo, nobody cropped out (his call): the frame takes the photo's own 3:2 shape and sits level with the buttons */
+  @media (min-width: 861px) {
+    .hero-media { align-self: end; padding-bottom: 44px; }
+    .hero-media .frame { position: relative; inset: auto; aspect-ratio: 3 / 2; }
+    .hero-media figcaption { position: static; padding-top: 10px; }
+  }
+  @media (max-width: 860px) {
+    .hero-portrait img { width: 100%; height: 100%; max-width: 100%; object-fit: cover; object-position: 50% 40%; }
+    .hero-portrait .photo-credit { position: absolute; z-index: 2; right: var(--inset); bottom: 6px; margin: 0;
+                                   font-size: 0.75rem; color: #FFFFFF; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); }
+  }
 </style>
 <!-- PREVIEW-KEEP-END -->
 <script type="application/ld+json">
@@ -702,8 +715,9 @@
 <main id="main">
   <section class="hero" aria-labelledby="name">
     <figure class="hero-portrait">
-      <img src="assets/photos/michael-portrait.webp" width="900" height="1557" decoding="async"
-           alt="Michael Velasquez in his navy Legion of Racers team shirt, arms crossed">
+      <img src="assets/photos/tgr-asia/kl-trophy-hero.jpg" width="1600" height="1067" fetchpriority="high" decoding="async"
+           alt="Team Philippines lifting their trophy on stage at the TGR Asia eSports GT Championship in Kuala Lumpur">
+      <figcaption class="photo-credit">Photo: All Is Amazing</figcaption>
     </figure>
     <div class="hero-copy">
       <h1 class="display" id="name"><span class="line"><span>Michael</span></span><span class="line"><span>Velasquez</span></span></h1>
@@ -732,14 +746,12 @@
         <a class="btn btn-quiet" href="#results">See results</a>
       </div>
     </div>
-    <figure class="hero-media reveal" id="reveal">
+    <figure class="hero-media">
       <div class="frame">
-        <img class="face" src="assets/photos/michael-portrait.webp" width="900" height="1557" fetchpriority="high"
-             alt="Michael Velasquez in his navy Legion of Racers team shirt, arms crossed">
-        <img class="car" src="assets/photos/pi-headon-19.jpg" width="864" height="1080" loading="lazy" decoding="async"
-             alt="His number 19 Legion of Racers Porsche 911 GT3 Cup coming straight at the camera at Phillip Island with its headlights on and Velasquez on the windscreen banner">
+        <img src="assets/photos/tgr-asia/kl-trophy-hero.jpg" width="1600" height="1067" fetchpriority="high"
+             alt="Team Philippines lifting their trophy on stage at the TGR Asia eSports GT Championship in Kuala Lumpur">
       </div>
-      <figcaption>Point at the photo to see his #19 Porsche at Phillip Island, August 2026.</figcaption>
+      <figcaption>Team Philippines finished second in Kuala Lumpur. Photo: All Is Amazing.</figcaption>
     </figure>
   </section>
 
@@ -796,8 +808,8 @@
 
   <section class="collage" id="collage" aria-label="Photos from 2024 to 2026, from the TGR Asia finals and the cars he has raced">
     <figure class="ev-1" data-speed="0">
-      <img src="assets/photos/tgr-asia/kl-trophy.jpg" width="1200" height="800" loading="lazy" decoding="async"
-           alt="Team Philippines lifting their trophy on stage at the TGR Asia eSports GT Championship in Kuala Lumpur">
+      <img src="assets/photos/tgr-asia/kl-stage.jpg" width="1200" height="800" loading="lazy" decoding="async"
+           alt="The three Team Philippines drivers introduced on stage under a big screen that reads Philippines">
       <figcaption><span class="where">Kuala Lumpur, 2026</span><span class="league">TGR Asia eSports GT Championship, <span class="nw">Gran Turismo 7</span></span><span class="credit">Photo: All Is Amazing</span></figcaption>
     </figure>
     <figure class="ev-2" data-speed="0.1">
